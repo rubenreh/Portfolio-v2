@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hardware Design Projects - Ruben Rehal</title>
+    <title>Embedded Systems Projects - Ruben Rehal</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -193,11 +193,30 @@
     </nav>
     <section class="hardware-projects-hero">
         <div class="hardware-projects-content">
-            <h1 class="glitch" data-text="Hardware Design Projects">Hardware Design Projects</h1>
+            <h1 class="glitch" data-text="Embedded Systems Projects">Embedded Systems Projects</h1>
             <h2 class="typing-text">Innovative Circuits & Embedded Systems</h2>
         </div>
     </section>
     <section class="hardware-projects-section">
+        <div class="hardware-project-item">
+            <div class="project-header">
+                <h3 class="project-title">Orion — Edge-AI Sensor Fusion Controller</h3>
+                <div class="project-meta">
+                    <span class="project-language">C++ / Python</span>
+                </div>
+            </div>
+            <p class="project-description">
+                Orion is an embedded intelligence stack that fuses IMU, ultrasonic, and optical sensors, executes an int8 neural model, and enforces automotive-style safety guarantees on ultra-low-power MCUs. The system represents a comprehensive approach to edge AI deployment with production-ready firmware and robust safety mechanisms.<br><br>
+                <b>Project Layout:</b> The repository is organized into production C++ firmware with drivers, fusion algorithms, inference engines, and safety layers. Includes lightweight Python utilities for training and exporting quantized weights, host-side helpers for data capture and hardware validation, and supplementary design briefs and timing notes.<br><br>
+                <b>Feature Highlights:</b> Deterministic 200 Hz control loop ensuring real-time performance, custom fixed-point inference core supporting dense layers and LUT activations for efficient neural network execution on resource-constrained hardware. Comprehensive safety mechanisms including sensor sanity checks, watchdog timers, and brownout guard rails. Confidence-gated outputs with intelligent fallback behavior to ensure system reliability.<br><br>
+                <b>Technical Implementation:</b> The firmware provides production-ready scaffolding with realistic algorithms and hooks for real sensor integration. The system showcases embedded AI engineering depth, combining traditional embedded systems expertise with modern machine learning deployment. The ML pipeline supports training and quantization workflows, while the tools enable comprehensive hardware validation and data logging capabilities.
+            </p>
+            <div class="project-github">
+                <a href="https://github.com/rubenreh/Orion" target="_blank">
+                    <i class="fab fa-github"></i> View on GitHub
+                </a>
+            </div>
+        </div>
         <div class="hardware-project-item">
             <div class="project-header">
                 <h3 class="project-title">Advanced Vineyard Irrigation Controller System</h3>
