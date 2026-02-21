@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Ruben Rehal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">RR</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+            <div class="theme-toggle"><i class="fas fa-moon"></i></div>
+            <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+        </div>
+    </nav>
+    <section class="hero contact-hero">
+        <div class="hero-content">
+            <h1 class="glitch" data-text="Contact">Contact</h1>
+            <h2 class="typing-text">Let's Connect!</h2>
+        </div>
+        <div class="particles-container" id="particles-js"></div>
+    </section>
+    
+    <!-- Linktree Section -->
+    <section class="linktree-section">
+        <div class="container">
+            <h2 class="section-title">All My Links</h2>
+            <div class="linktree-card">
+                <div class="linktree-header">
+                    <i class="fas fa-link"></i>
+                    <h3>Find Me Online</h3>
+                    <p>All my important links in one place</p>
+                </div>
+                <a href="https://linktr.ee/rubenreh" class="linktree-button" target="_blank">
+                    <i class="fas fa-external-link-alt"></i>
+                    View All Links
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="contact-section">
+        <h2 class="section-title">Contact Me</h2>
+        <form class="contact-form" id="contact-form" action="https://formspree.io/f/mldldynd" method="POST">
+            <div class="form-group">
+                <label for="subject" class="form-label">Subject</label>
+                <input type="text" id="subject" name="subject" class="form-input" required>
+            </div>
+            <div class="form-group">
+                <label for="name" class="form-label">Your Name</label>
+                <input type="text" id="name" name="name" class="form-input" required>
+            </div>
+            <div class="form-group">
+                <label for="email" class="form-label">Your Email</label>
+                <input type="email" id="email" name="email" class="form-input" required>
+            </div>
+            <div class="form-group">
+                <label for="message" class="form-label">Message</label>
+                <textarea id="message" name="message" class="form-textarea" rows="6" required></textarea>
+            </div>
+            <button type="submit" class="form-button">Send</button>
+        </form>
+        <div id="contact-success" style="display:none; margin-top:1.5rem; color:var(--secondary-color); font-weight:500;"></div>
+        <!-- EmailJS integration: see script.js for setup instructions -->
+    </section>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Ruben Rehal. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://github.com/rubenreh" class="social-link" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/rubenrehal" class="social-link" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://x.com/rubenreh5" class="social-link" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://linktr.ee/rubenreh" class="social-link" target="_blank"><i class="fas fa-link"></i></a>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 

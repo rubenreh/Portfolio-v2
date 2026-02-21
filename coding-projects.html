@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Projects - Ruben Rehal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        .coding-projects-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .coding-projects-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .coding-projects-content {
+            text-align: center;
+            color: white;
+            z-index: 2;
+            position: relative;
+        }
+
+        .coding-projects-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .coding-projects-content h2 {
+            font-size: 1.5rem;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+
+        .coding-projects-section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .coding-project-item {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .coding-project-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+
+        .coding-project-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .project-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 0;
+        }
+
+        .project-meta {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .project-date {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .project-language {
+            background: var(--accent-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .project-description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .project-github {
+            position: static;
+            margin-top: 2rem;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .project-github a {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .project-github a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .back-button {
+            position: fixed;
+            top: 2rem;
+            left: 2rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        @media (max-width: 768px) {
+            .coding-projects-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .coding-project-item {
+                padding: 1.5rem;
+            }
+            
+            .project-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .project-github {
+                position: static;
+                margin-top: 1rem;
+            }
+            
+            .back-button {
+                position: relative;
+                top: auto;
+                left: auto;
+                margin: 1rem 0;
+                display: inline-block;
+            }
+        }
+    </style>
+    <style>
+    /* Dark mode alternating backgrounds for project cards */
+    @media (prefers-color-scheme: dark) {
+      .coding-project-item:nth-child(odd) {
+        background: #181a20;
+      }
+      .coding-project-item:nth-child(even) {
+        background: #23262f;
+      }
+    }
+    body.dark .coding-project-item:nth-child(odd) {
+      background: #181a20;
+    }
+    body.dark .coding-project-item:nth-child(even) {
+      background: #23262f;
+    }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">RR</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="theme-toggle"><i class="fas fa-moon"></i></div>
+            <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+        </div>
+    </nav>
+
+    <section class="coding-projects-hero">
+        <div class="coding-projects-content">
+            <h1 class="glitch" data-text="Coding Projects">Coding Projects</h1>
+            <h2 class="typing-text">7+ Years of Programming Experience</h2>
+        </div>
+    </section>
+
+    <section class="coding-projects-section">
+        <div class="coding-project-item">
+            <div class="project-header">
+                <h3 class="project-title">Calorify</h3>
+                <div class="project-meta">
+                    <span class="project-language">C++ / JavaScript / Python</span>
+                </div>
+            </div>
+            <p class="project-description">
+                Calorify is a full-stack nutrition-tracking application that fuses real-time computer vision with custom data structures for sub-second food recognition and macro analysis. OpenCV handles frame-by-frame food scanning, while a ChatGPT integration generates personalized dietary recommendations based on user profiles.<br><br>
+                <b>Architecture:</b> A Trie-based search index for O(k) food lookups, a HashMap for constant-time macronutrient retrieval, and a BST for ranked recommendation sorting — all hand-implemented without standard library containers.<br>
+                <b>Pipeline:</b> Camera capture &rarr; OpenCV preprocessing &rarr; classification &rarr; nutritional data lookup &rarr; profile-aware calorie/macro calculation &rarr; recommendation engine.<br>
+                <b>Technical Highlights:</b> Custom memory management for data structure nodes, efficient serialization for user profile persistence, and modular architecture enabling independent component testing.
+            </p>
+            <div class="project-github">
+                <a href="https://github.com/rubenreh/Calorify" target="_blank">
+                    <i class="fab fa-github"></i> View on GitHub
+                </a>
+            </div>
+        </div>
+        <div class="coding-project-item">
+            <div class="project-header">
+                <h3 class="project-title">Image Concatenation: UNIX Process Management</h3>
+                <div class="project-meta">
+                    <span class="project-language">C</span>
+                </div>
+            </div>
+            <p class="project-description">
+                A systems-level C project implementing concurrent image processing through UNIX process orchestration. The parent process forks worker children, establishes bidirectional IPC via <code>pipe()</code>, and coordinates execution through <code>exec()</code> program replacement — mirroring real-world pipeline architectures.<br><br>
+                <b>Concurrency Model:</b> Parent-child process hierarchy with non-blocking I/O, graceful signal propagation (SIGCHLD, SIGTERM), and proper zombie reaping to prevent resource leaks.<br>
+                <b>Systems Engineering:</b> Raw file descriptor management, custom signal handlers with <code>sigaction()</code>, error-resilient process lifecycle control, and deterministic cleanup sequences across forked process trees.<br>
+                <b>Reliability:</b> Every system call is guarded by error handling, with cascading cleanup on failure to ensure no orphaned processes or dangling file descriptors.
+            </p>
+            <div class="project-github">
+                <a href="https://github.com/rubenreh/Image-Concatenation-in-C" target="_blank">
+                    <i class="fab fa-github"></i> View on GitHub
+                </a>
+            </div>
+        </div>
+        <div class="coding-project-item">
+            <div class="project-header">
+                <h3 class="project-title">Hand Hero</h3>
+                <div class="project-meta">
+                    <span class="project-language">C++ / Arduino / OpenCV</span>
+                </div>
+            </div>
+            <p class="project-description">
+                An embedded assistive-technology system that bridges computer vision with real-time hardware control. OpenCV processes webcam frames to detect and classify hand gestures, then transmits commands over a serial protocol to an Arduino microcontroller driving a DC motor, piezo buzzer, and indicator LEDs.<br><br>
+                <b>Real-Time Pipeline:</b> Frame capture at 30fps &rarr; background subtraction &rarr; contour detection &rarr; convexity-defect analysis &rarr; gesture classification &rarr; serial command dispatch — all within a 33ms per-frame budget.<br>
+                <b>Embedded Control:</b> Arduino firmware implements a state machine consuming serial commands, with PWM-based motor speed control, debounced input handling, and watchdog-style timeout for safety cutoff.<br>
+                <b>Integration:</b> Modular sensor architecture allows hot-swapping peripherals, with a bidirectional serial feedback channel for real-time system monitoring and diagnostics.
+            </p>
+            <div class="project-github">
+                <a href="https://github.com/rubenreh/Hand-Hero" target="_blank">
+                    <i class="fab fa-github"></i> View on GitHub
+                </a>
+            </div>
+        </div>
+        <div class="coding-project-item">
+            <div class="project-header">
+                <h3 class="project-title">AI Chess Engine with Neural Network</h3>
+                <div class="project-meta">
+                    <span class="project-language">Python / TensorFlow</span>
+                </div>
+            </div>
+            <p class="project-description">
+                A chess engine combining deep learning evaluation with classical game-tree search. A TensorFlow neural network scores board positions across multiple features — material balance, king safety, pawn structure, and center control — while the search layer selects moves via Minimax, Negamax, and Alpha-Beta Pruning with configurable depth.<br><br>
+                <b>Search Optimization:</b> Alpha-Beta pruning reduces the branching factor from ~35 to ~6 at depth 4, enabling real-time move selection. Move ordering heuristics (captures first, killer moves) maximize cutoff rates.<br>
+                <b>Neural Architecture:</b> Fully connected layers with ReLU activations, trained on labeled board evaluations. The network replaces the traditional handcrafted evaluation function, yielding stronger positional play.<br>
+                <b>Modes:</b> Human vs AI, AI vs AI (for architecture benchmarking), full move history with undo, and hot-swappable evaluation functions for A/B testing different network architectures.
+            </p>
+            <div class="project-github">
+                <a href="https://github.com/rubenreh/AI-Chess-Advanced" target="_blank">
+                    <i class="fab fa-github"></i> View on GitHub
+                </a>
+            </div>
+        </div>
+        <div class="coding-project-item">
+            <div class="project-header">
+                <h3 class="project-title">Mo Money</h3>
+                <div class="project-meta">
+                    <span class="project-language">C++</span>
+                </div>
+            </div>
+            <p class="project-description">
+                A production-grade C++ financial processing engine that ingests ETF transaction streams, computes Adjusted Cost Base (ACB) in real time, and generates capital gains/loss (CGL) reports compliant with Canada Revenue Agency requirements.<br><br>
+                <b>Data Architecture:</b>
+                <ul>
+                    <li><b>Transaction Class:</b> Encapsulates ticker, date, type, shares, and value with RAII-managed linked-list pointers. Overloaded comparison operators enable custom sort by date and type for deterministic processing order.</li>
+                    <li><b>History Class:</b> Owns the transaction linked list lifecycle — insertion, chronological sorting, ACB/CGL propagation, and formatted output. Destructor guarantees zero memory leaks across arbitrary transaction volumes.</li>
+                </ul>
+                <b>Memory Model:</b> Manual heap management via raw pointers with disciplined ownership semantics — no smart pointers by design, enforcing explicit allocation/deallocation to build low-level memory fluency.<br>
+                <b>Processing Pipeline:</b> File I/O parser &rarr; Transaction object construction &rarr; chronological sort &rarr; running ACB accumulation &rarr; per-sale CGL computation &rarr; formatted tax report output.<br>
+                <b>Outcome:</b> Accurate, auditable ACB/CGL reporting for arbitrary ETF portfolios, stress-tested against edge cases (partial sales, same-day transactions, zero-cost-basis entries).
+            </p>
+            <div class="project-github">
+                <a href="https://github.com/rubenreh/Transaction-Management" target="_blank">
+                    <i class="fab fa-github"></i> View on GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Ruben Rehal. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://github.com/rubenreh" class="social-link" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/rubenrehal" class="social-link" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://x.com/rubenreh5" class="social-link" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 

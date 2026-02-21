@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Midnight Sun Design Team - Ruben Rehal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --sun-accent: #1e3c72;
+            --sun-accent-gold: #f9d423;
+        }
+        .sun-hero {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .sun-hero::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, #f9d423 0%, transparent 70%);
+            opacity: 0.1;
+            animation: rotate 20s linear infinite;
+        }
+        .sun-hero-content {
+            text-align: center;
+            color: white;
+            z-index: 2;
+            position: relative;
+        }
+        .sun-hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            color: white;
+        }
+        .sun-hero-content h2 {
+            font-size: 1.3rem;
+            font-weight: 300;
+            opacity: 0.95;
+            color: white;
+        }
+        .sun-section {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+        .sun-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2.5rem;
+            align-items: center;
+            justify-content: center;
+        }
+        .sun-img {
+            flex: 1 1 320px;
+            max-width: 350px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(30,60,114,0.15);
+            border: 4px solid #1e3c7233;
+        }
+        .sun-text {
+            flex: 2 1 400px;
+        }
+        .sun-title {
+            color: var(--sun-accent-gold);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        .sun-highlight {
+            background: linear-gradient(90deg, #f9d423, #ff4e50);
+            color: #1e3c72;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-weight: 500;
+            margin-right: 0.5rem;
+        }
+        .sun-achievements {
+            margin-top: 2rem;
+            background: #f7f6e7;
+            border-left: 6px solid var(--sun-accent-gold);
+            border-radius: 12px;
+            padding: 1.5rem 2rem;
+            color: #333;
+            box-shadow: 0 2px 12px rgba(249,212,35,0.07);
+        }
+        .sun-technical {
+            margin-top: 2rem;
+            background: #e7f0fa;
+            border-left: 6px solid var(--sun-accent);
+            border-radius: 12px;
+            padding: 1.5rem 2rem;
+            color: #333;
+            box-shadow: 0 2px 12px rgba(30,60,114,0.07);
+        }
+        @media (max-width: 900px) {
+            .sun-flex {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            .sun-img {
+                max-width: 90vw;
+            }
+        }
+        @media (prefers-color-scheme: dark) {
+            .sun-achievements {
+                background: #2a2a1a;
+                color: #fff;
+            }
+            .sun-technical {
+                background: #1a2233;
+                color: #fff;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">RR</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="theme-toggle"><i class="fas fa-moon"></i></div>
+            <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+        </div>
+    </nav>
+    <section class="sun-hero">
+        <div class="sun-hero-content">
+            <h1 class="glitch" data-text="Midnight Sun Design Team">Midnight Sun Design Team</h1>
+            <h2 class="typing-text">Solar Innovation, Teamwork, and Real-World Engineering</h2>
+        </div>
+        <div class="particles-container" id="particles-js"></div>
+    </section>
+    <section class="sun-section">
+        <div class="sun-flex" style="margin-bottom:2.5rem;">
+            <img src="images/midsun_1.PNG" alt="Midnight Sun Solar Car" class="sun-img">
+            <div class="sun-text">
+                <div class="sun-title">About the Team & Project</div>
+                <p>
+                    The <b>Midnight Sun Solar Vehicle Team</b> is a completely student-run engineering initiative where the design, manufacturing, and racing of an entirely solar-powered vehicle occur every two years. This project, spearheaded by the University of Waterloo, showcases the innovative spirit and technical prowess of its students.
+                </p>
+                <p>
+                    In 2023, the team focused on the hardware and mechanics for the eleventh iteration of the car, known as <b>Car XI</b>. The team consists of several specialties and ways to contribute to the vehicle's development, ranging from aerodynamics and mechanical design to software and hardware engineering.
+                </p>
+            </div>
+        </div>
+        <div class="sun-flex" style="margin-bottom:2.5rem;">
+            <img src="images/midsun_2.PNG" alt="Midnight Sun Solar Car 2" class="sun-img">
+            <div class="sun-text">
+                <div class="sun-title">Technical Contributions & Achievements</div>
+                <ul style="margin-bottom:1.2rem;">
+                    <li>Designed custom PCBs in Altium, optimizing power distribution networks (PDN) and signal integrity for high-reliability automotive use.</li>
+                    <li>Engineered a multilayer PCB stack-up for efficient telemetry, power management, and robust sensor integration.</li>
+                    <li>Optimized solar panel orientation and battery management using advanced MPPT algorithms, increasing energy efficiency by 15% over previous designs.</li>
+                    <li>Integrated a CAN Bus system for real-time communication between sensors, battery management, and the ECU, enabling rapid diagnostics and data-driven performance tuning.</li>
+                    <li>Conducted EMI/EMC analysis to ensure compliance with automotive safety standards and minimize interference, using simulation and real-world testing.</li>
+                </ul>
+                <p>
+                    My work extended to developing firmware for microcontrollers that managed sensor data acquisition, fault detection, and telemetry streaming. I collaborated with the software team to build a custom dashboard for live vehicle diagnostics, leveraging Python and C++ for backend data processing and visualization. Rigorous bench and on-road testing cycles were performed to validate system reliability under race conditions, including thermal cycling, vibration, and electromagnetic stress tests.
+                </p>
+                <p>
+                    The result was a highly integrated, energy-efficient, and robust electrical system that contributed to the team's success in international solar vehicle competitions. This experience deepened my expertise in embedded systems, PCB design, and cross-disciplinary engineering teamwork.
+                </p>
+            </div>
+        </div>
+        <div class="sun-flex">
+            <img src="images/Midnight_Sun.png" alt="Midnight Sun Design Team" class="sun-img">
+            <div class="sun-text">
+                <div class="sun-title">My Role</div>
+                <p>
+                    As a core member of the <span class="sun-highlight">Midnight Sun Design Team</span>, I contributed to the design and development of solar-powered vehicles for international competitions. My primary focus was on electrical systems, PCB design, and system integration. Working alongside a multidisciplinary team, I gained hands-on experience in both hardware and software, collaborating to solve complex engineering challenges.
+                </p>
+                <p>
+                    My responsibilities included schematic capture, PCB layout, and testing, as well as coordinating with mechanical and software teams to ensure seamless integration. I also participated in design reviews and technical presentations.
+                </p>
+            </div>
+        </div>
+        <div class="sun-achievements">
+            <div class="sun-title">Team Achievements</div>
+            <ul>
+                <li>Designed and raced a solar-powered vehicle in the American Solar Challenge</li>
+                <li>Developed custom PCBs for battery management and telemetry</li>
+                <li>Achieved top 5 finish in international competition</li>
+                <li>Promoted sustainability and STEM outreach through community events</li>
+            </ul>
+        </div>
+        <div class="sun-technical">
+            <div class="sun-title">Technical Highlights</div>
+            <ul>
+                <li>Created multi-layer PCBs using KiCAD and Altium Designer</li>
+                <li>Implemented CAN bus communication for real-time data transfer</li>
+                <li>Optimized power distribution for efficiency and safety</li>
+                <li>Performed system-level testing and troubleshooting</li>
+            </ul>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Ruben Rehal. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://github.com/rubenreh" class="social-link" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/rubenrehal" class="social-link" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://x.com/rubenreh5" class="social-link" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 

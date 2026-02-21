@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Ruben Rehal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">RR</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="theme-toggle"><i class="fas fa-moon"></i></div>
+            <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+        </div>
+    </nav>
+    <section class="hero about-hero">
+        <div class="hero-content">
+            <h1 class="glitch" data-text="About">About</h1>
+            <h2 class="typing-text">My Technical Arsenal</h2>
+        </div>
+        <div class="particles-container" id="particles-js"></div>
+    </section>
+    <section class="about-me-section">
+        <div class="about-me-container">
+            <div class="about-me-image">
+                <img src="images/StandingStage.PNG" alt="Profile" class="about-img">
+            </div>
+            <div style="position:relative;">
+                <div id="particle-bg" style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;"></div>
+                <div class="about-me-text" style="position:relative;z-index:1;">
+                    <h2>Hello!</h2>
+                    <p>I'm Ruben Rehal, a Computer Engineering student at the University of Waterloo (BASc., graduating 2028) and a recipient of the President's Scholarship and the Burnett Scholarship. I build production-grade software and machine learning systems — from scalable backend services handling thousands of concurrent requests to data pipelines powering real-time inference and anomaly detection.</p>
+                    <p>On the SWE side, I've architected distributed microservice backends with Kafka, Redis, and PostgreSQL, deployed containerized services via Docker and Kubernetes, and built REST/WebSocket APIs serving partner platforms at scale. On the ML side, I've trained neural networks for board evaluation in adversarial search, engineered ETL pipelines for feature generation and walk-forward validation, and implemented vector search retrieval systems for constraint-aware querying.</p>
+                    <p>I'm always looking to connect with teams working on challenging software infrastructure, applied ML, or systems at scale. <a href="contact.html">Let's talk.</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="experience-timeline">
+        <h2 class="section-title">Experience</h2>
+        <div class="timeline">
+            <div class="timeline-item" data-aos="fade-up">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-year">Sep 2025 - Dec 2025</span>
+                    <div class="timeline-title">C++ Firmware Engineer (SDK) <span>@ Nokia</span></div>
+                    <div class="timeline-location">Ottawa, ON</div>
+                    <div class="timeline-desc">Boosted verification throughput 35% by integrating automated test frameworks into CI/CD hardware pipelines. Optimized firmware via memory-safe C++ and regression testing, reducing quantization error by 25% vs MATLAB. Built Python automation scripts for log extraction, cutting bring-up time by 40%. Designed performant processing algorithms for optical-modem ASICs, achieving 99.9% transmission reliability.</div>
+                </div>
+            </div>
+            <div class="timeline-item" data-aos="fade-up">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-year">Jan 2025 - Apr 2025</span>
+                    <div class="timeline-title">Full Stack Developer <span>@ Hatch Coding</span></div>
+                    <div class="timeline-location">Toronto, ON</div>
+                    <div class="timeline-desc">Boosted retention 35% via a dynamic content engine that adjusts app difficulty based on user proficiency stats. Improved runtime efficiency 40% by refactoring JS/Python mechanics and optimizing backend logic. Deployed scalable REST/WebSocket endpoints for partner platforms (CrunchLabs, Chess.com), serving thousands of users. Implemented adaptive tracking algorithms increasing average session length by 25%.</div>
+                </div>
+            </div>
+            <div class="timeline-item" data-aos="fade-up">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-year">Jan 2025 - Feb 2025</span>
+                    <div class="timeline-title">Backend Infrastructure Engineer <span>@ The Grey Cell Brief</span></div>
+                    <div class="timeline-location">Toronto, ON</div>
+                    <div class="timeline-desc">Reduced API response latency by 40ms by optimizing PostgreSQL query plans and implementing Redis caching. Engineered a scalable cloud deployment pipeline using GitHub Actions and Docker, enabling zero-downtime rollouts. Refactored monoliths into Kafka microservices, boosting throughput 30% for high-volume data ingestion. Implemented automated regression testing covering 95% of core API paths, reducing critical production bugs by 60%.</div>
+                </div>
+            </div>
+            <div class="timeline-item" data-aos="fade-up">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-year">May 2024 - Aug 2024</span>
+                    <div class="timeline-title">Embedded Software Intern <span>@ Red Leaf IT Systems</span></div>
+                    <div class="timeline-location">Waterloo, ON</div>
+                    <div class="timeline-desc">Reduced latency by 200ms by prototyping C++ aggregation algorithms and embedded routines for constrained IoT hardware. Built Node.js/React layers to deploy edge inference endpoints, cutting cloud costs by 15%. Developed Python telemetry pipelines to process sensor streams, enabling automated reporting and reducing diagnosis time. Designed edge-computing architectures on Cortex-M MCUs, reducing bandwidth usage by 40% via local aggregation.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="skills-section">
+        <div class="skills-tabs">
+            <button class="skills-tab active" data-tab="technical">Languages</button>
+            <button class="skills-tab" data-tab="tools">Backend / Systems</button>
+        </div>
+        <div id="skills-technical" class="skills-tab-content active">
+            <h2 class="section-title">Languages</h2>
+            <div class="skills-grid">
+                <div class="skill-item"><span class="skill-level">Advanced</span><span class="skill-icon"><img src="images/icons/PythonLogo.png" alt="Python" style="width:56px;height:56px;object-fit:contain;border-radius:8px;"></span><span class="skill-name">Python</span></div>
+                <div class="skill-item"><span class="skill-level">Advanced</span><span class="skill-icon"><img src="images/icons/C++.png" alt="C++" style="width:56px;height:56px;object-fit:contain;border-radius:8px;"></span><span class="skill-name">C++</span></div>
+                <div class="skill-item"><span class="skill-level">Advanced</span><span class="skill-icon"><img src="images/icons/SQLLogo.png" alt="SQL" style="width:56px;height:56px;object-fit:contain;border-radius:8px;"></span><span class="skill-name">SQL</span></div>
+                <div class="skill-item"><span class="skill-level">Advanced</span><span class="skill-icon"><img src="images/icons/JSLogo.png" alt="JavaScript" style="width:56px;height:56px;object-fit:contain;border-radius:8px;"></span><span class="skill-name">JavaScript</span></div>
+                <div class="skill-item"><span class="skill-level">Advanced</span><span class="skill-icon"><img src="images/icons/TypeScript.png" alt="TypeScript" style="width:56px;height:56px;object-fit:contain;border-radius:8px;"></span><span class="skill-name">TypeScript</span></div>
+                <div class="skill-item"><span class="skill-level">Advanced</span><span class="skill-icon"><img src="images/icons/JavaLogo.png" alt="Java" style="width:56px;height:56px;object-fit:contain;border-radius:8px;"></span><span class="skill-name">Java</span></div>
+                <div class="skill-item"><span class="skill-level">Advanced</span><span class="skill-icon"><i class="fab fa-golang" style="font-size:56px;color:var(--accent-color);"></i></span><span class="skill-name">Go</span></div>
+                <div class="skill-item"><span class="skill-level">Advanced</span><span class="skill-icon"><i class="fab fa-rust" style="font-size:56px;color:var(--accent-color);"></i></span><span class="skill-name">Rust</span></div>
+                <div class="skill-item"><span class="skill-level">Advanced</span><span class="skill-icon"><img src="images/icons/BashLogo.png" alt="Bash" style="width:56px;height:56px;object-fit:contain;border-radius:8px;"></span><span class="skill-name">Bash</span></div>
+            </div>
+        </div>
+        <div id="skills-tools" class="skills-tab-content">
+            <h2 class="section-title">Backend / Systems</h2>
+            <div class="skills-grid">
+                <div class="skill-item"><span class="skill-level">Advanced</span><span class="skill-icon"><img src="images/icons/NodejsLogo.png" alt="Node.js" style="width:56px;height:56px;object-fit:contain;border-radius:8px;"></span><span class="skill-name">Node.js</span></div>
+                <div class="skill-item"><span class="skill-level">Advanced</span><span class="skill-icon"><i class="fas fa-bolt" style="font-size:56px;color:var(--accent-color);"></i></span><span class="skill-name">FastAPI</span></div>
+                <div class="skill-item"><span class="skill-level">Advanced</span><span class="skill-icon"><i class="fas fa-database" style="font-size:56px;color:var(--accent-color);"></i></span><span class="skill-name">PostgreSQL</span></div>
+                <div class="skill-item"><span class="skill-level">Advanced</span><span class="skill-icon"><i class="fas fa-server" style="font-size:56px;color:var(--accent-color);"></i></span><span class="skill-name">Redis</span></div>
+                <div class="skill-item"><span class="skill-level">Advanced</span><span class="skill-icon"><i class="fas fa-arrows-spin" style="font-size:56px;color:var(--accent-color);"></i></span><span class="skill-name">Kafka</span></div>
+                <div class="skill-item"><span class="skill-level">Advanced</span><span class="skill-icon"><img src="images/icons/DockerLogo.png" alt="Docker" style="width:56px;height:56px;object-fit:contain;border-radius:8px;"></span><span class="skill-name">Docker</span></div>
+                <div class="skill-item"><span class="skill-level">Advanced</span><span class="skill-icon"><img src="images/icons/KubernetesLogo.png" alt="Kubernetes" style="width:56px;height:56px;object-fit:contain;border-radius:8px;"></span><span class="skill-name">Kubernetes</span></div>
+                <div class="skill-item"><span class="skill-level">Advanced</span><span class="skill-icon"><img src="images/icons/PytorchLogo.png" alt="PyTorch" style="width:56px;height:56px;object-fit:contain;border-radius:8px;"></span><span class="skill-name">PyTorch</span></div>
+                <div class="skill-item"><span class="skill-level">Advanced</span><span class="skill-icon"><i class="fas fa-network-wired" style="font-size:56px;color:var(--accent-color);"></i></span><span class="skill-name">gRPC</span></div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Ruben Rehal. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://github.com/rubenreh" class="social-link" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/rubenrehal" class="social-link" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://x.com/rubenreh5" class="social-link" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://linktr.ee/rubenreh" class="social-link" target="_blank"><i class="fas fa-link"></i></a>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 

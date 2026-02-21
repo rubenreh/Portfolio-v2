@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hardware Board Design Projects - Ruben Rehal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --board-accent: #00c6fb;
+            --board-accent-dark: #005bea;
+        }
+        .board-projects-hero {
+            background: linear-gradient(135deg, #00c6fb 0%, #005bea 100%);
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .board-projects-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+        .board-projects-content {
+            text-align: center;
+            color: white;
+            z-index: 2;
+            position: relative;
+        }
+        .board-projects-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .board-projects-content h2 {
+            font-size: 1.5rem;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+        .board-projects-section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .board-project-item {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .board-project-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(135deg, #00c6fb, #005bea);
+        }
+        .board-project-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .project-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--board-accent-dark);
+            margin: 0;
+        }
+        .project-meta {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .project-date {
+            background: linear-gradient(135deg, #00c6fb, #005bea);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        .project-language {
+            background: var(--board-accent-dark);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        .project-description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+        .project-github {
+            position: static;
+            margin-top: 2rem;
+            display: flex;
+            justify-content: flex-end;
+        }
+        .project-github a {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, #00c6fb, #005bea);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,198,251,0.3);
+        }
+        .project-github a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,198,251,0.4);
+        }
+        @media (max-width: 768px) {
+            .board-projects-content h1 {
+                font-size: 2.5rem;
+            }
+            .board-project-item {
+                padding: 1.5rem;
+            }
+            .project-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .project-github {
+                position: static;
+                margin-top: 1rem;
+            }
+        }
+        /* Alternating backgrounds in dark mode */
+        @media (prefers-color-scheme: dark) {
+            .board-project-item:nth-child(odd) {
+                background: #10202a;
+            }
+            .board-project-item:nth-child(even) {
+                background: #18344a;
+            }
+        }
+        body.dark .board-project-item:nth-child(odd) {
+            background: #10202a;
+        }
+        body.dark .board-project-item:nth-child(even) {
+            background: #18344a;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">RR</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="theme-toggle"><i class="fas fa-moon"></i></div>
+            <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+        </div>
+    </nav>
+    <section class="board-projects-hero">
+        <div class="board-projects-content">
+            <h1 class="glitch" data-text="Hardware Board Design Projects">Hardware Board Design Projects</h1>
+            <h2 class="typing-text">Custom PCBs, Embedded Systems & Real-World Impact</h2>
+        </div>
+    </section>
+    <section class="board-projects-section">
+        <div class="board-project-item">
+            <div class="project-header">
+                <h3 class="project-title">IoT Environmental Sensor Board</h3>
+                <div class="project-meta">
+                    <span class="project-language">Altium365</span>
+                </div>
+            </div>
+            <p class="project-description">
+                Designed a compact, low-power PCB for environmental monitoring in smart agriculture. Integrated temperature, humidity, and soil moisture sensors with a microcontroller and LoRa wireless module. Focused on robust power management and weatherproofing for outdoor deployment. The board supports remote firmware updates and real-time data streaming to a cloud dashboard. Used Altium365 for schematic capture, layout, and design review collaboration.
+            </p>
+            <div class="project-github">
+                <a href="#" target="_blank">
+                    <i class="fab fa-github"></i> View on GitHub
+                </a>
+            </div>
+        </div>
+        <div class="board-project-item">
+            <div class="project-header">
+                <h3 class="project-title">Robotics Motor Controller Board</h3>
+                <div class="project-meta">
+                    <span class="project-language">Solidworks</span>
+                </div>
+            </div>
+            <p class="project-description">
+                Developed a high-efficiency motor controller PCB for a robotics platform. The board features dual H-bridge drivers, current sensing, and thermal protection. Designed for modularity and easy integration with various microcontrollers. Used Solidworks for enclosure design and mechanical fit checks. The project included extensive testing for reliability under continuous operation and is now used in a university robotics lab.
+            </p>
+            <div class="project-github">
+                <a href="#" target="_blank">
+                    <i class="fab fa-github"></i> View on GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Ruben Rehal. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://github.com/rubenreh" class="social-link" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/rubenrehal" class="social-link" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://x.com/rubenreh5" class="social-link" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
+</html> 

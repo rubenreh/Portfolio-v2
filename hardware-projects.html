@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hardware Design Projects - Ruben Rehal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --hardware-accent: #43e97b;
+            --hardware-accent-dark: #38b86c;
+        }
+        .hardware-projects-hero {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hardware-projects-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+        .hardware-projects-content {
+            text-align: center;
+            color: white;
+            z-index: 2;
+            position: relative;
+        }
+        .hardware-projects-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .hardware-projects-content h2 {
+            font-size: 1.5rem;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+        .hardware-projects-section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .hardware-project-item {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .hardware-project-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(135deg, #43e97b, #38f9d7);
+        }
+        .hardware-project-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .project-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 0;
+        }
+        .project-meta {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .project-date {
+            background: linear-gradient(135deg, #43e97b, #38f9d7);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        .project-language {
+            background: var(--hardware-accent-dark);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        .project-description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+        .project-github {
+            position: static;
+            margin-top: 2rem;
+            display: flex;
+            justify-content: flex-end;
+        }
+        .project-github a {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, #43e97b, #38f9d7);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(67, 233, 123, 0.3);
+        }
+        .project-github a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(67, 233, 123, 0.4);
+        }
+        @media (max-width: 768px) {
+            .hardware-projects-content h1 {
+                font-size: 2.5rem;
+            }
+            .hardware-project-item {
+                padding: 1.5rem;
+            }
+            .project-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .project-github {
+                position: static;
+                margin-top: 1rem;
+            }
+        }
+    </style>
+    <style>
+    /* Dark mode alternating backgrounds for hardware project cards */
+    @media (prefers-color-scheme: dark) {
+      .hardware-project-item:nth-child(odd) {
+        background: #14291a;
+      }
+      .hardware-project-item:nth-child(even) {
+        background: #1b3a23;
+      }
+    }
+    body.dark .hardware-project-item:nth-child(odd) {
+      background: #14291a;
+    }
+    body.dark .hardware-project-item:nth-child(even) {
+      background: #1b3a23;
+    }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">RR</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="theme-toggle"><i class="fas fa-moon"></i></div>
+            <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+        </div>
+    </nav>
+    <section class="hardware-projects-hero">
+        <div class="hardware-projects-content">
+            <h1 class="glitch" data-text="Hardware Design Projects">Hardware Design Projects</h1>
+            <h2 class="typing-text">Innovative Circuits & Embedded Systems</h2>
+        </div>
+    </section>
+    <section class="hardware-projects-section">
+        <div class="hardware-project-item">
+            <div class="project-header">
+                <h3 class="project-title">Advanced Vineyard Irrigation Controller System</h3>
+                <div class="project-meta">
+                    <span class="project-language">C</span>
+                </div>
+            </div>
+            <p class="project-description">
+                Implemented a sophisticated vineyard irrigation controller using the STM32F401RE microcontroller. The system demonstrates advanced embedded programming concepts including real-time control, sensor integration, motor control, and complex scheduling algorithms for automated agricultural irrigation management. Features include multi-zone irrigation control with 4-pipeline system, servo-controlled valves with precise positioning (500-2000μs pulse width), DC motor control with PWM-based speed control, advanced sensor integration with ultrasonic water level monitoring and RPM sensing, intelligent control system with dual-mode operation, and professional user interface with RGB LED status and BCD display. The project showcases embedded systems design with multi-peripheral integration, advanced C programming with modular architecture, STM32 HAL integration, and control systems engineering with PID-like control and feedback loops. This work represents a major milestone in embedded systems education, demonstrating exceptional proficiency in embedded systems programming, real-time control, sensor integration, and agricultural technology.
+            </p>
+            <div class="project-github">
+                <a href="https://github.com/rubenreh/Advanced-Vineyard-Irrigation-Controller-System" target="_blank">
+                    <i class="fab fa-github"></i> View on GitHub
+                </a>
+            </div>
+        </div>
+        <div class="hardware-project-item">
+            <div class="project-header">
+                <h3 class="project-title">Advanced HVAC Control System with Traffic Light Integration</h3>
+                <div class="project-meta">
+                    <span class="project-language">VHDL</span>
+                </div>
+            </div>
+            <p class="project-description">
+                Implemented a sophisticated HVAC control system integrated with a 16-state traffic light controller and energy monitoring system. This complex multi-component digital system demonstrates advanced state machine design, system integration, and real-world control applications. The system features temperature control (0-15°C), 16-state traffic light progression, energy monitoring with environmental sensors, and a 4-bit magnitude comparator. Key components include HVAC temperature control with clock division, 16-state traffic light state machine, energy monitoring with vacation mode, and integrated 7-segment display multiplexing. The project showcases advanced VHDL programming, complex state machine design, and system-level integration skills essential for professional FPGA development.
+            </p>
+            <div class="project-github">
+                <a href="https://github.com/rubenreh/Advanced-HVAC-Control-System" target="_blank">
+                    <i class="fab fa-github"></i> View on GitHub
+                </a>
+            </div>
+        </div>
+        <div class="hardware-project-item">
+            <div class="project-header">
+                <h3 class="project-title">Advanced Reflex Meter & Real-Time Counter System</h3>
+                <div class="project-meta">
+                    <span class="project-language">Assembly</span>
+                </div>
+            </div>
+            <p class="project-description">
+                Implemented a sophisticated reflex measurement system with real-time counter display and precise timing control. The system demonstrates advanced embedded programming concepts including real-time polling, precise timing measurement, and complex user interaction systems. Features include high-precision reflex meter with 0.1ms accuracy, 8-bit counter system with continuous counting (0x00 to 0xFF), advanced timing control with multiple delay routines, and comprehensive user interface design with LED feedback. The project showcases real-time systems design, advanced assembly programming with complex bit manipulation, embedded systems integration with hardware interfacing, and measurement & analysis with precision timing and random generation. This work represents a major milestone in embedded systems education, demonstrating both theoretical knowledge and practical implementation skills essential for professional embedded systems development.
+            </p>
+            <div class="project-github">
+                <a href="https://github.com/rubenreh/Advanced-Reflex-Meter-Real-Time-Counter-System" target="_blank">
+                    <i class="fab fa-github"></i> View on GitHub
+                </a>
+            </div>
+        </div>
+        <div class="hardware-project-item">
+            <div class="project-header">
+                <h3 class="project-title">Advanced Interrupt-Driven Timer System</h3>
+                <div class="project-meta">
+                    <span class="project-language">Assembly</span>
+                </div>
+            </div>
+            <p class="project-description">
+                Developed a sophisticated interrupt-driven timer system with random time generation and complex LED control patterns. The system demonstrates advanced embedded programming concepts including interrupt service routines (ISR), platform-level interrupt controllers (PLIC), and real-time system design. Features include advanced interrupt system with ISR and PLIC configuration, random timer generation with variable timing (5.0-25.0 seconds), complex LED control system with 8-LED display and pattern generation, and comprehensive system integration with main program loop and interrupt coordination. The project showcases interrupt programming excellence with custom ISR implementation, real-time systems design with precise timing, advanced assembly programming with complex bit manipulation, and embedded systems integration with hardware interfacing. This work represents a major milestone in embedded systems education, demonstrating exceptional proficiency in advanced embedded systems programming and interrupt handling.
+            </p>
+            <div class="project-github">
+                <a href="https://github.com/rubenreh/Advanced-Interrupt-Driven-Timer-System" target="_blank">
+                    <i class="fab fa-github"></i> View on GitHub
+                </a>
+            </div>
+        </div>
+        <div class="hardware-project-item">
+            <div class="project-header">
+                <h3 class="project-title">Smart Water Bottle</h3>
+                <div class="project-meta">
+                    <span class="project-language">Arduino</span>
+                </div>
+            </div>
+            <p class="project-description">
+                Developed a smart water bottle with integrated sensors to monitor hydration levels and remind users to drink water. Designed custom PCBs and embedded firmware for sensor data acquisition and Bluetooth communication. The bottle features an OLED display, capacitive touch controls, and a rechargeable battery. Created a companion mobile app for data visualization and notifications. The project was featured in a university innovation showcase and received positive feedback for usability and design.
+            </p>
+            <div class="project-github">
+                <a href="#" target="_blank">
+                    <i class="fab fa-github"></i> View on GitHub
+                </a>
+            </div>
+        </div>
+        <div class="hardware-project-item">
+            <div class="project-header">
+                <h3 class="project-title">Advanced Digital Arithmetic System</h3>
+                <div class="project-meta">
+                    <span class="project-language">VHDL</span>
+                </div>
+            </div>
+            <p class="project-description">
+                Developed a sophisticated 4-bit full adder system with integrated 7-segment display multiplexing and logic processing capabilities. The system demonstrates advanced digital design principles including custom arithmetic circuit design, display interfacing, and complex multiplexing systems. Features include a custom 4-bit full adder with carry propagation, time-multiplexed 7-segment display system, multi-mode logic processor with 4 configurable operations (AND, OR, XOR, custom), and real-time processing with LED output system. The project showcases hierarchical design architecture, modular component development, overflow detection, and high-frequency clock synchronization for seamless display operation. This work represents a significant milestone in digital design education, demonstrating both theoretical knowledge and practical implementation skills essential for advanced FPGA development.
+            </p>
+            <div class="project-github">
+                <a href="https://github.com/rubenreh/Advanced-Digital-Arithmetic-System" target="_blank">
+                    <i class="fab fa-github"></i> View on GitHub
+                </a>
+            </div>
+        </div>
+
+    </section>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Ruben Rehal. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://github.com/rubenreh" class="social-link" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/rubenrehal" class="social-link" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://x.com/rubenreh5" class="social-link" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 

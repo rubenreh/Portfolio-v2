@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mr. Health & Fitness 2024 - Ruben Rehal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --health-accent: #ff7e5f;
+            --health-accent-dark: #feb47b;
+        }
+        .health-hero {
+            background: linear-gradient(135deg, #ff7e5f 0%, #feb47b 100%);
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .health-hero-content {
+            text-align: center;
+            color: white;
+            z-index: 2;
+            position: relative;
+        }
+        .health-hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .health-hero-content h2 {
+            font-size: 1.3rem;
+            font-weight: 300;
+            opacity: 0.95;
+        }
+        .health-section {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+        .health-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2.5rem;
+            align-items: center;
+            justify-content: center;
+        }
+        .health-img {
+            flex: 1 1 320px;
+            max-width: 350px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(255,126,95,0.15);
+            border: 4px solid #ff7e5f33;
+        }
+        .health-text {
+            flex: 2 1 400px;
+        }
+        .health-title {
+            color: var(--health-accent);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        .health-highlight {
+            background: linear-gradient(90deg, #ff7e5f, #feb47b);
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-weight: 500;
+            margin-right: 0.5rem;
+        }
+        .health-achievements {
+            margin-top: 2rem;
+            background: #fff6f2;
+            border-left: 6px solid var(--health-accent);
+            border-radius: 12px;
+            padding: 1.5rem 2rem;
+            color: #333;
+            box-shadow: 0 2px 12px rgba(255,126,95,0.07);
+        }
+        .health-impact {
+            margin-top: 2rem;
+            background: #fff6f2;
+            border-left: 6px solid var(--health-accent-dark);
+            border-radius: 12px;
+            padding: 1.5rem 2rem;
+            color: #333;
+            box-shadow: 0 2px 12px rgba(254,180,123,0.07);
+        }
+        @media (max-width: 900px) {
+            .health-flex {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            .health-img {
+                max-width: 90vw;
+            }
+        }
+        @media (prefers-color-scheme: dark) {
+            .health-achievements, .health-impact {
+                background: #2a1a16;
+                color: #fff;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">RR</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="theme-toggle"><i class="fas fa-moon"></i></div>
+            <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+        </div>
+    </nav>
+    <section class="health-hero">
+        <div class="health-hero-content">
+            <h1>Mr. Health & Fitness 2024</h1>
+            <h2>Empowering Others Through Fitness, Nutrition, and Mentorship</h2>
+            <div style="margin-top:2rem;">
+                <span style="display:inline-block; background:linear-gradient(90deg,#ff7e5f,#feb47b); color:white; font-size:1.3rem; font-weight:700; padding:0.7rem 2rem; border-radius:30px; box-shadow:0 2px 12px rgba(255,126,95,0.15); letter-spacing:1px;">Top 15 Worldwide Finalist!</span>
+            </div>
+        </div>
+    </section>
+    <section class="health-section">
+        <div class="health-flex">
+            <img src="images/Health_Fitness_Magazine.PNG" alt="Muscle & Fitness Magazine Cover" class="health-img">
+            <div class="health-text">
+                <div class="health-title">My Journey</div>
+                <p>
+                    My passion for health and fitness began at a young age, evolving into a lifelong commitment to physical well-being and personal growth. As a finalist in the <span class="health-highlight">Mr. Health & Fitness 2024</span>competition, I dedicated myself to inspiring others to pursue healthier lifestyles. My approach combines evidence-based nutrition, strength training, and holistic wellness practices.
+                </p>
+                <p>
+                    Throughout my journey, I have mentored dozens of individuals, helping them achieve their fitness goals and build sustainable habits. My work extends beyond the gym, focusing on mental resilience, community engagement, and continuous learning.
+                </p>
+            </div>
+        </div>
+        <div class="health-achievements" style="margin-top:2.5rem;">
+            <div class="health-title" style="margin-bottom:0.5rem;">Featured Inspiration: Chris Bumstead</div>
+            <p style="margin-bottom:0.5rem;">
+                Chris Bumstead, known as "C-Bum," made history by winning his 4th straight Classic Physique Olympia title, as featured on the cover of <b>Muscle & Fitness</b> magazine. His dedication, discipline, and relentless pursuit of excellence have inspired countless individuals in the fitness community—including myself. C-Bum's journey is a testament to the power of hard work, resilience, and a passion for pushing boundaries.
+            </p>
+            <p style="font-size:0.95rem; color:#ff7e5f; font-weight:500;">C-Bum Chases History: Chris Bumstead eyes his 4th straight Classic Physique O title (Muscle & Fitness, p.72)</p>
+        </div>
+        <div class="health-achievements" style="margin-top:2.5rem; display:flex; align-items:center; gap:2rem; flex-wrap:wrap;">
+            <img src="images/Health_Fitness_Email.PNG" alt="Top 15 Proof Email" style="max-width:320px; border-radius:12px; box-shadow:0 4px 16px rgba(0,0,0,0.15);">
+            <div>
+                <div class="health-title" style="margin-bottom:0.5rem; color:#ff7e5f;">Official Recognition</div>
+                <p style="margin-bottom:0.5rem;">
+                    I am incredibly proud to have placed in the <b>Top 15 worldwide</b> in the Mr. Health & Fitness competition! This achievement reflects the amazing support from my community and my dedication to health, fitness, and inspiring others. Thank you to everyone who voted and believed in my journey.
+                </p>
+                <p style="font-size:0.95rem; color:#ff7e5f; font-weight:500;">See the official email confirmation of my Top 15 placement!</p>
+            </div>
+        </div>
+        <div class="health-impact">
+            <div class="health-title">Impact & Vision</div>
+            <p>
+                My mission is to make health and fitness accessible to everyone, regardless of background or experience. I believe in the power of mentorship and community to drive positive change. Through ongoing education and outreach, I aim to inspire the next generation to lead healthier, more fulfilling lives.
+            </p>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Ruben Rehal. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://github.com/rubenreh" class="social-link" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/rubenrehal" class="social-link" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://x.com/rubenreh5" class="social-link" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
