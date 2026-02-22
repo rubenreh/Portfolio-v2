@@ -31,7 +31,7 @@
         <div class="particles-container" id="particles-js"></div>
     </section>
     <section class="projects-section">
-        <h2 class="section-title">Past Project Experience</h2>
+        <h2 class="section-title">Past Project Experience <span id="kv" style="cursor:pointer;opacity:0.15;font-size:0.45em;vertical-align:middle;transition:opacity 0.3s;" onmouseenter="this.style.opacity='0.5'" onmouseleave="this.style.opacity='0.15'" onclick="document.getElementById('av').style.display='flex'"><i class="fas fa-lock"></i></span></h2>
         <div class="projects-grid">
             <div class="project-card">
                 <img src="images/Portfolio.png" alt="Portfolio Website">
@@ -126,7 +126,52 @@
             </div>
         </div>
     </footer>
+    <div id="av" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.85);z-index:9999;align-items:center;justify-content:center;backdrop-filter:blur(6px);">
+        <div style="background:var(--card-background);border-radius:16px;padding:2.5rem 2rem;max-width:380px;width:90%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.5);border:1px solid rgba(255,215,0,0.15);">
+            <i class="fas fa-lock" style="font-size:2rem;color:var(--secondary-color);margin-bottom:1rem;display:block;"></i>
+            <p style="color:var(--text-color);margin-bottom:1.5rem;font-size:1.05rem;">Enter access code</p>
+            <input id="av-i" type="password" style="width:100%;padding:0.8rem 1rem;background:rgba(255,255,255,0.06);border:1.5px solid rgba(255,255,255,0.13);border-radius:8px;color:var(--text-color);font-size:1rem;font-family:inherit;text-align:center;letter-spacing:0.15em;outline:none;" placeholder="&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;" onkeydown="if(event.key==='Enter')document.getElementById('av-b').click()">
+            <p id="av-e" style="color:#ff4444;font-size:0.9rem;margin-top:0.8rem;min-height:1.2em;"></p>
+            <div style="display:flex;gap:0.8rem;margin-top:1rem;">
+                <button onclick="document.getElementById('av').style.display='none';document.getElementById('av-i').value='';document.getElementById('av-e').textContent=''" style="flex:1;padding:0.7rem;border:1.5px solid rgba(255,255,255,0.13);background:transparent;color:var(--text-color);border-radius:8px;cursor:pointer;font-size:0.95rem;">Cancel</button>
+                <button id="av-b" onclick="_vx()" style="flex:1;padding:0.7rem;background:var(--secondary-color);color:var(--primary-color);border:none;border-radius:8px;cursor:pointer;font-weight:600;font-size:0.95rem;">Unlock</button>
+            </div>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="script.js"></script>
+    <script>
+    (function(){
+        var _0=[0x34,0x34,0x34,0x37,0x66,0x64,0x34,0x62,0x63,0x37,0x33,0x66,0x34,0x34,0x36,0x61,0x38,0x63,0x62,0x31,0x35,0x38,0x66,0x66,0x30,0x65,0x35,0x34,0x30,0x66,0x66,0x37,0x66,0x65,0x62,0x38,0x35,0x66,0x62,0x35,0x37,0x62,0x35,0x39,0x63,0x63,0x30,0x31,0x38,0x37,0x30,0x64,0x35,0x32,0x63,0x32,0x64,0x31,0x39,0x66,0x30,0x34,0x61,0x33];
+        var _k=_0.map(function(c){return String.fromCharCode(c)}).join('');
+        window._vx=async function(){
+            var _i=document.getElementById('av-i').value;
+            var _d=new TextEncoder().encode(_i);
+            var _h=await crypto.subtle.digest('SHA-256',_d);
+            var _a=Array.from(new Uint8Array(_h)).map(function(b){return b.toString(16).padStart(2,'0')}).join('');
+            if(_a===_k){
+                document.getElementById('av').style.display='none';
+                document.getElementById('av-i').value='';
+                _rx();
+            }else{
+                document.getElementById('av-e').textContent='Invalid code';
+                document.getElementById('av-i').value='';
+            }
+        };
+        function _rx(){
+            var _g=document.querySelector('.projects-grid');
+            var _c=document.createElement('div');
+            _c.className='project-card';
+            _c.style.cssText='opacity:0;transform:translateY(30px);transition:opacity 0.6s ease,transform 0.6s ease;border:1.5px solid rgba(255,215,0,0.25);';
+            var _n=[84,97,108,111,115,32,65,73];
+            var _t=_n.map(function(c){return String.fromCharCode(c)}).join('');
+            _c.innerHTML='<div class="project-content" style="padding-top:1.5rem;"><h3 style="font-size:1.5rem;">'+_t+'</h3><p class="project-desc" style="text-align:left;font-size:1.02rem;line-height:1.7;">Solo-founded and built an end-to-end AI-powered automation platform from scratch — architecture, engineering, marketing, and customer acquisition. Launched November 2025.<br><br><b>Revenue:</b> $60K/yr run-rate within 3 months of launch. On track for $180K in year one.<br><br><b>Technical:</b> Architected an event-driven backend using Redis orchestration, cutting latency to &lt;800ms and eliminating 90% of manual entry. Engineered fault-tolerant ETL pipelines with 99.9% data integrity. Decoupled event ingestion from Node.js backends to handle 10K+ concurrent requests. Implemented vector search retrieval for live constraint-aware querying. Scaled to 10+ automated business locations.</p><div class="project-skills"><span>Node.js</span><span>Redis</span><span>PostgreSQL</span><span>Docker</span><span>Vector Search</span></div></div>';
+            _g.insertBefore(_c,_g.firstChild);
+            requestAnimationFrame(function(){requestAnimationFrame(function(){_c.style.opacity='1';_c.style.transform='translateY(0)';})});
+            document.getElementById('kv').style.display='none';
+        }
+    })();
+    </script>
 </body>
 </html> 
