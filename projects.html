@@ -153,24 +153,13 @@
             if(_a===_k){
                 document.getElementById('av').style.display='none';
                 document.getElementById('av-i').value='';
-                _rx();
+                sessionStorage.setItem(String.fromCharCode(95,97,118),_a.slice(0,16));
+                window.location.href=[0x70,0x72,0x6f,0x6a,0x65,0x63,0x74,0x2d,0x61,0x6c,0x70,0x68,0x61,0x2e,0x68,0x74,0x6d,0x6c].map(function(c){return String.fromCharCode(c)}).join('');
             }else{
                 document.getElementById('av-e').textContent='Invalid code';
                 document.getElementById('av-i').value='';
             }
         };
-        function _rx(){
-            var _g=document.querySelector('.projects-grid');
-            var _c=document.createElement('div');
-            _c.className='project-card';
-            _c.style.cssText='opacity:0;transform:translateY(30px);transition:opacity 0.6s ease,transform 0.6s ease;border:1.5px solid rgba(255,215,0,0.25);';
-            var _n=[84,97,108,111,115,32,65,73];
-            var _t=_n.map(function(c){return String.fromCharCode(c)}).join('');
-            _c.innerHTML='<div class="project-content" style="padding-top:1.5rem;"><h3 style="font-size:1.5rem;">'+_t+'</h3><p class="project-desc" style="text-align:left;font-size:1.02rem;line-height:1.7;">Solo-founded and built an end-to-end AI-powered automation platform from scratch — architecture, engineering, marketing, and customer acquisition. Launched November 2025.<br><br><b>Revenue:</b> $60K/yr run-rate within 3 months of launch. On track for $180K in year one.<br><br><b>Technical:</b> Architected an event-driven backend using Redis orchestration, cutting latency to &lt;800ms and eliminating 90% of manual entry. Engineered fault-tolerant ETL pipelines with 99.9% data integrity. Decoupled event ingestion from Node.js backends to handle 10K+ concurrent requests. Implemented vector search retrieval for live constraint-aware querying. Scaled to 10+ automated business locations.</p><div class="project-skills"><span>Node.js</span><span>Redis</span><span>PostgreSQL</span><span>Docker</span><span>Vector Search</span></div></div>';
-            _g.insertBefore(_c,_g.firstChild);
-            requestAnimationFrame(function(){requestAnimationFrame(function(){_c.style.opacity='1';_c.style.transform='translateY(0)';})});
-            document.getElementById('kv').style.display='none';
-        }
     })();
     </script>
 </body>

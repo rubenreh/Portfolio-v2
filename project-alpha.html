@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Alpha - Ruben Rehal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <meta name="robots" content="noindex, nofollow">
+    <style>
+        .alpha-hero {
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(160deg, #0A0A0A 0%, #1a1207 50%, #0A0A0A 100%);
+        }
+        .alpha-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(ellipse at center, rgba(205,155,60,0.06) 0%, transparent 60%);
+            animation: rotate 30s linear infinite;
+        }
+        .alpha-hero-inner {
+            text-align: center;
+            z-index: 2;
+            position: relative;
+        }
+        .alpha-logo {
+            width: 180px;
+            height: 180px;
+            object-fit: contain;
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(0 8px 32px rgba(205,155,60,0.25));
+            animation: logoFloat 4s ease-in-out infinite;
+        }
+        @keyframes logoFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
+        }
+        .alpha-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #cd9b3c;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.06em;
+        }
+        .alpha-subtitle {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.6);
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+        }
+        .alpha-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #cd9b3c, #a07828);
+            color: #0A0A0A;
+            padding: 0.4rem 1.2rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-top: 1rem;
+            letter-spacing: 0.03em;
+        }
+
+        .alpha-stats {
+            max-width: 900px;
+            margin: -3rem auto 3rem auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 3;
+        }
+        .stat-card {
+            background: var(--card-background);
+            border-radius: 14px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            border: 1px solid rgba(205,155,60,0.15);
+            box-shadow: 0 4px 24px rgba(0,0,0,0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .stat-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 40px rgba(205,155,60,0.12);
+        }
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #cd9b3c;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+        .stat-label {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.6);
+            font-weight: 400;
+        }
+
+        .alpha-section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        .alpha-section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #cd9b3c;
+            margin-bottom: 1.5rem;
+        }
+        .alpha-story {
+            font-size: 1.1rem;
+            line-height: 1.85;
+            color: var(--text-color);
+            margin-bottom: 2rem;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .tech-block {
+            background: var(--card-background);
+            border-radius: 12px;
+            padding: 1.8rem;
+            border: 1px solid rgba(255,255,255,0.06);
+            transition: border-color 0.3s;
+        }
+        .tech-block:hover {
+            border-color: rgba(205,155,60,0.3);
+        }
+        .tech-block h4 {
+            color: #cd9b3c;
+            font-size: 1.15rem;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        .tech-block h4 i {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+        .tech-block p {
+            color: rgba(255,255,255,0.75);
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        .alpha-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.7rem;
+            margin-top: 2rem;
+            margin-bottom: 3rem;
+        }
+        .alpha-stack span {
+            background: rgba(205,155,60,0.1);
+            color: #cd9b3c;
+            border: 1px solid rgba(205,155,60,0.2);
+            padding: 0.45rem 1.1rem;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .alpha-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: rgba(255,255,255,0.5);
+            text-decoration: none;
+            font-size: 0.95rem;
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            transition: color 0.3s, background 0.3s;
+            margin-bottom: 2rem;
+        }
+        .alpha-back:hover {
+            color: #cd9b3c;
+            background: rgba(205,155,60,0.08);
+        }
+
+        @media (max-width: 700px) {
+            .alpha-stats { grid-template-columns: 1fr; margin-top: -2rem; }
+            .alpha-title { font-size: 2.5rem; }
+            .alpha-logo { width: 130px; height: 130px; }
+            .tech-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">RR</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="theme-toggle"><i class="fas fa-moon"></i></div>
+            <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+        </div>
+    </nav>
+
+    <section class="alpha-hero">
+        <div class="alpha-hero-inner">
+            <img src="images/LogoV2.png" alt="" class="alpha-logo">
+            <div class="alpha-title">Talos AI</div>
+            <p class="alpha-subtitle">AI-Powered Business Automation Platform</p>
+            <span class="alpha-badge">Solo Founder &middot; Nov 2025 &ndash; Present</span>
+        </div>
+    </section>
+
+    <div class="alpha-stats">
+        <div class="stat-card">
+            <span class="stat-number">$60K</span>
+            <span class="stat-label">Annual run-rate in &lt;3 months</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-number">$180K</span>
+            <span class="stat-label">Projected year-one revenue</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-number">10+</span>
+            <span class="stat-label">Automated business locations</span>
+        </div>
+    </div>
+
+    <div class="alpha-section">
+        <a href="projects.html" class="alpha-back"><i class="fas fa-arrow-left"></i> Back to Projects</a>
+
+        <h3 class="alpha-section-title">The Story</h3>
+        <p class="alpha-story">
+            I built Talos AI from the ground up as a solo founder — every line of backend code, every customer conversation, every marketing campaign. In under three months since launching in November 2025, the platform hit a $60K/yr run-rate and is on track for $180K in its first year.
+        </p>
+        <p class="alpha-story">
+            Talos automates business operations end-to-end, replacing hours of manual work with intelligent event-driven systems. I handled everything myself: architecting the infrastructure, engineering the data pipelines, building the product, acquiring customers, and scaling operations across 10+ business locations.
+        </p>
+
+        <h3 class="alpha-section-title">Technical Architecture</h3>
+        <div class="tech-grid">
+            <div class="tech-block">
+                <h4><i class="fas fa-bolt"></i> Event-Driven Backend</h4>
+                <p>Architected with Redis orchestration, cutting end-to-end latency to &lt;800ms and eliminating 90% of manual data entry across all client locations.</p>
+            </div>
+            <div class="tech-block">
+                <h4><i class="fas fa-database"></i> Fault-Tolerant ETL Pipelines</h4>
+                <p>Engineered data pipelines that transform incoming streams into validated JSON via regex parsing, maintaining 99.9% data integrity at scale.</p>
+            </div>
+            <div class="tech-block">
+                <h4><i class="fas fa-server"></i> Parallel Processing</h4>
+                <p>Decoupled event ingestion from Node.js backends, enabling parallel processing of 10K+ concurrent web requests without bottlenecks.</p>
+            </div>
+            <div class="tech-block">
+                <h4><i class="fas fa-search"></i> Vector Search Retrieval</h4>
+                <p>Implemented semantic vector search to query live rosters in real time, ensuring 100% adherence to complex business constraints.</p>
+            </div>
+            <div class="tech-block">
+                <h4><i class="fas fa-shield-alt"></i> API &amp; Transaction Integrity</h4>
+                <p>Refined API logic and transaction boundaries to eliminate errors, scaling reliably to 10+ automated business locations.</p>
+            </div>
+            <div class="tech-block">
+                <h4><i class="fas fa-rocket"></i> Solo Full-Stack Execution</h4>
+                <p>Built and shipped everything solo — backend infrastructure, product development, customer acquisition strategy, and go-to-market execution.</p>
+            </div>
+        </div>
+
+        <h3 class="alpha-section-title">Tech Stack</h3>
+        <div class="alpha-stack">
+            <span>Node.js</span>
+            <span>Redis</span>
+            <span>PostgreSQL</span>
+            <span>Docker</span>
+            <span>Vector Search</span>
+            <span>FastAPI</span>
+            <span>REST APIs</span>
+            <span>ETL Pipelines</span>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Ruben Rehal. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://github.com/rubenreh" class="social-link" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/rubenrehal" class="social-link" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://x.com/rubenreh5" class="social-link" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://linktr.ee/rubenreh" class="social-link" target="_blank"><i class="fas fa-link"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+    (function(){
+        var _v=String.fromCharCode(95,97,118);
+        if(!sessionStorage.getItem(_v)){window.location.href='projects.html';return;}
+        sessionStorage.removeItem(_v);
+    })();
+    </script>
+</body>
+</html>
